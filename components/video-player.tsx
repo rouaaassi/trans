@@ -1,16 +1,17 @@
 "use client";
 
-import { WebsocketContext } from "@/app/context/WebsocketContext";
-import { useContext, useEffect, useMemo, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import Hls from "hls.js";
-import { Button } from "@nextui-org/button";
+
+import { LangSelector } from "./LangSelector";
+
 import { IMessage, ILoadMessage } from "@/interfaces";
 import { WebsocketMessages } from "@/enums";
-import { LangSelector } from "./LangSelector";
+import { WebsocketContext } from "@/app/context/WebsocketContext";
 import { languages } from "@/constants";
 
 export const VideoPlayer = () => {
-  const BUFFER_TIME_SECONDS = 2;
+  //   const BUFFER_TIME_SECONDS = 2;
 
   const socket = useContext(WebsocketContext);
 
@@ -24,10 +25,6 @@ export const VideoPlayer = () => {
     initiateData();
 
     const hls = new Hls();
-
-    socket.on("connect", () => {
-      console.log("connected");
-    });
 
     socket.on(WebsocketMessages.message, (data) => {
       const parsed: IMessage = JSON.parse(data);
@@ -68,7 +65,6 @@ export const VideoPlayer = () => {
     });
 
     return () => {
-      socket.off("connect");
       socket.off(WebsocketMessages.message);
       socket.off(WebsocketMessages.load);
     };
@@ -112,13 +108,13 @@ export const VideoPlayer = () => {
   };
 
   return (
-    <>
+    <div>
       <LangSelector
-        onChange={onSelectLanguage}
         defaultValue={selectedLanguage}
-      ></LangSelector>
-
-      <video className="mt-1" ref={videoRef} preload="none" controls></video>
-    </>
+        onChange={onSelectLanguage}
+      />
+      {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
+      <video ref={videoRef} controls className="mt-1" preload="none" />
+    </div>
   );
 };

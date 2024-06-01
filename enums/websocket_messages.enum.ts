@@ -1,5 +1,5 @@
 export enum WebsocketMessages {
-  load = 'load',
-  message = 'message',
-  play = 'play',
+  load = "load",
+  message = "message",
+  play = "play",
 }

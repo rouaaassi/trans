@@ -1,10 +1,12 @@
 "use client";
 
-import { VideoPlayer } from "@/components/video-player";
 import { Button } from "@nextui-org/button";
 import { Input } from "@nextui-org/input";
 import { useContext, useState } from "react";
+
 import { WebsocketContext } from "../context/WebsocketContext";
+
+import { VideoPlayer } from "@/components/video-player";
 
 export default function StreamsPage() {
   const socket = useContext(WebsocketContext);
@@ -29,8 +31,8 @@ export default function StreamsPage() {
 
       <Input
         isRequired
-        label="Stream URL"
         className="max-w-xs"
+        label="Stream URL"
         onValueChange={onChangeInput}
       />
 
@@ -39,7 +41,7 @@ export default function StreamsPage() {
       </Button>
 
       <div className="mt-3">
-        <VideoPlayer></VideoPlayer>
+        <VideoPlayer />
       </div>
     </div>
   );
