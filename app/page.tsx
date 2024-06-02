@@ -25,7 +25,7 @@ export default function Home() {
             radius: "full",
             variant: "shadow",
           })}
-          href={siteConfig.links.docs}
+          href={siteConfig.streams.href}
         >
           Get Started For Free
         </Link>

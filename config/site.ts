@@ -9,6 +9,10 @@ export const siteConfig = {
       href: "/",
     },
     {
+      label: "Streams",
+      href: "/streams",
+    },
+    {
       label: "Pricing",
       href: "/pricing",
     },
@@ -31,9 +35,8 @@ export const siteConfig = {
       href: "/help-feedback",
     },
   ],
-  links: {
-    docs: "https://nextui.org",
-    discord: "https://discord.gg/9b6yyZKmH4",
-    sponsor: "https://patreon.com/jrgarciadev",
+  streams: {
+    label: "Streams",
+    href: "/streams",
   },
 };
