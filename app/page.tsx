@@ -74,7 +74,7 @@ export default function Home() {
   };
 
   return (
-    <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
+    <section className="flex flex-col items-center justify-center gap-8">
       <div className="inline-block max-w-lg text-center justify-center">
         <h1 className={title()}>Translate&nbsp;</h1>
         <h1 className={title({ color: "violet" })}>any live streams&nbsp;</h1>
@@ -85,10 +85,14 @@ export default function Home() {
         </h2>
       </div>
 
-      <div className="flex flex-col gap-3">
-        <TonConnectButton />
+      <div className="flex flex-col gap-4">
+        {/* <TonConnectButton /> */}
 
-        <Input label="Stream URL" onValueChange={onChangeStreamURLInput} />
+        <Input
+          label="Stream URL"
+          fullWidth
+          onValueChange={onChangeStreamURLInput}
+        />
 
         <Link
           isDisabled={!walletAddress}
