@@ -4,7 +4,3 @@ export interface IMessage {
   transcript: string;
   language: string;
 }
-
-export interface ILoadMessage {
-  streamURL: string;
-}

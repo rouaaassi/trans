@@ -1,17 +1,22 @@
 "use client";
 
-import { useContext, useEffect, useRef, useState } from "react";
 import Hls from "hls.js";
+import { useContext, useEffect, useRef, useState } from "react";
 
 import { LangSelector } from "./LangSelector";
 
-import { IMessage, ILoadMessage } from "@/interfaces";
-import { WebsocketMessages } from "@/enums";
 import { WebsocketContext } from "@/app/context/WebsocketContext";
-import { languages } from "@/constants";
+import { BACKEND_ROUTES, languages } from "@/constants";
+import { WebsocketMessages } from "@/enums";
+import { IMessage } from "@/interfaces";
+import { axiosInstance } from "@/tools/axios";
+import { useRouter } from "next/router";
+import { Button } from "@nextui-org/button";
 
 export const VideoPlayer = () => {
   //   const BUFFER_TIME_SECONDS = 2;
+
+  const router = useRouter();
 
   const socket = useContext(WebsocketContext);
 
@@ -22,9 +27,9 @@ export const VideoPlayer = () => {
   const [selectedLanguage, setSelectedLanguage] = useState<string>("en");
 
   useEffect(() => {
-    initiateData();
+    initiateCaptions();
 
-    const hls = new Hls();
+    loadStreamM3U8Link();
 
     socket.on(WebsocketMessages.message, (data) => {
       const parsed: IMessage = JSON.parse(data);
@@ -46,38 +51,32 @@ export const VideoPlayer = () => {
       foundTrack.addCue(cue);
     });
 
-    socket.on(WebsocketMessages.load, async (data) => {
-      if (loaded) {
-        return;
-      }
-
-      const parsed: ILoadMessage = JSON.parse(data);
-
-      hls.loadSource(parsed.streamURL);
-      hls.attachMedia(videoRef.current);
-      hls.on(Hls.Events.ERROR, (err) => {
-        console.log(err);
-      });
-
-      playVideo();
-
-      setLoaded(true);
-    });
-
     return () => {
       socket.off(WebsocketMessages.message);
-      socket.off(WebsocketMessages.load);
     };
   }, []);
 
-  const playVideo = () => {
+  const playVideo = async () => {
+    try {
+      const response = await axiosInstance.post(BACKEND_ROUTES.playStream, {
+        hash: router.query.hash as string,
+        language: selectedLanguage,
+      });
+    } catch (error: any) {
+      throw new Error(error);
+      // TODO: show error via Snackbar or popup
+    }
     // videoRef.current.currentTime =
     //   videoRef.current.duration - BUFFER_TIME_SECONDS;
     videoRef.current.play();
   };
 
-  // language => "en", "es", ...
-  const selectLanguageInMediaPlayer = (language: string) => {
+  const onSelectLanguage = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    // language => "en", "es", ...
+    const language = event.target.value;
+
+    setSelectedLanguage(language);
+
     // disable any selected language
     Object.values(videoRef.current.textTracks as TextTrack[]).forEach((i) => {
       i.mode = "hidden";
@@ -95,16 +94,42 @@ export const VideoPlayer = () => {
     foundTrack.mode = "showing";
   };
 
-  const onSelectLanguage = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectedLanguage(event.target.value);
+  const initiateCaptions = () => {
+    if (loaded) {
+      return;
+    }
 
-    selectLanguageInMediaPlayer(event.target.value);
-  };
-
-  const initiateData = () => {
     languages.forEach((language) => {
       videoRef.current.addTextTrack("captions", language.label, language.key);
     });
+  };
+
+  const loadStreamM3U8Link = async () => {
+    try {
+      const response = await axiosInstance.get(
+        BACKEND_ROUTES.fetchStream(router.query.hash as string)
+      );
+
+      if (loaded) {
+        return;
+      }
+
+      const hls = new Hls();
+
+      hls.loadSource(response.data);
+      hls.attachMedia(videoRef.current);
+
+      hls.on(Hls.Events.ERROR, (error) => {
+        throw new Error(error);
+        // TODO: show error via Snackbar or popup
+      });
+
+      setLoaded(true);
+    } catch (error: any) {
+      console.error(error);
+      throw new Error(error);
+      // TODO: show error via Snackbar or popup
+    }
   };
 
   return (
@@ -115,6 +140,8 @@ export const VideoPlayer = () => {
       />
       {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
       <video ref={videoRef} controls className="mt-1" preload="none" />
+
+      <Button onClick={playVideo}>Play</Button>
     </div>
   );
 };

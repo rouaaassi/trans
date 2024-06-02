@@ -8,6 +8,8 @@ import { ThemeProviderProps } from "next-themes/dist/types";
 
 import { WebsocketProvider, socket } from "./context/WebsocketContext";
 
+import { TonConnectUIProvider } from "@tonconnect/ui-react";
+
 export interface ProvidersProps {
   children: React.ReactNode;
   themeProps?: ThemeProviderProps;
@@ -18,9 +20,13 @@ export function Providers({ children, themeProps }: ProvidersProps) {
 
   return (
     <NextUIProvider navigate={router.push}>
-      <WebsocketProvider value={socket}>
-        <NextThemesProvider {...themeProps}>{children}</NextThemesProvider>
-      </WebsocketProvider>
+      <TonConnectUIProvider
+        manifestUrl={`https://${process.env.NUXT_PUBLIC_FRONTEND_URL}/tonconnect-manifest.json`}
+      >
+        <WebsocketProvider value={socket}>
+          <NextThemesProvider {...themeProps}>{children}</NextThemesProvider>
+        </WebsocketProvider>
+      </TonConnectUIProvider>
     </NextUIProvider>
   );
 }
