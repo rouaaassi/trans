@@ -1,5 +1,3 @@
-"use client";
-
 import { VideoPlayer } from "@/components/video-player";
 
 export default function StreamsPage() {

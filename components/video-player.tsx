@@ -10,13 +10,13 @@ import { BACKEND_ROUTES, languages } from "@/constants";
 import { WebsocketMessages } from "@/enums";
 import { IMessage } from "@/interfaces";
 import { axiosInstance } from "@/tools/axios";
-import { useRouter } from "next/router";
 import { Button } from "@nextui-org/button";
+import { useSearchParams } from "next/navigation";
 
 export const VideoPlayer = () => {
   //   const BUFFER_TIME_SECONDS = 2;
 
-  const router = useRouter();
+  const searchParams = useSearchParams();
 
   const socket = useContext(WebsocketContext);
 
@@ -59,7 +59,7 @@ export const VideoPlayer = () => {
   const playVideo = async () => {
     try {
       const response = await axiosInstance.post(BACKEND_ROUTES.playStream, {
-        hash: router.query.hash as string,
+        hash: searchParams.get("hash"),
         language: selectedLanguage,
       });
     } catch (error: any) {
@@ -107,7 +107,7 @@ export const VideoPlayer = () => {
   const loadStreamM3U8Link = async () => {
     try {
       const response = await axiosInstance.get(
-        BACKEND_ROUTES.fetchStream(router.query.hash as string)
+        BACKEND_ROUTES.fetchStream(searchParams.get("hash") as string)
       );
 
       if (loaded) {
@@ -126,7 +126,6 @@ export const VideoPlayer = () => {
 
       setLoaded(true);
     } catch (error: any) {
-      console.error(error);
       throw new Error(error);
       // TODO: show error via Snackbar or popup
     }

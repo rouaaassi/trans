@@ -20,13 +20,15 @@ export function Providers({ children, themeProps }: ProvidersProps) {
 
   return (
     <NextUIProvider navigate={router.push}>
-      <TonConnectUIProvider
-        manifestUrl={`https://${process.env.NUXT_PUBLIC_FRONTEND_URL}/tonconnect-manifest.json`}
-      >
-        <WebsocketProvider value={socket}>
-          <NextThemesProvider {...themeProps}>{children}</NextThemesProvider>
-        </WebsocketProvider>
-      </TonConnectUIProvider>
+      <React.Suspense>
+        <TonConnectUIProvider
+          manifestUrl={`https://${process.env.NUXT_PUBLIC_FRONTEND_URL}/tonconnect-manifest.json`}
+        >
+          <WebsocketProvider value={socket}>
+            <NextThemesProvider {...themeProps}>{children}</NextThemesProvider>
+          </WebsocketProvider>
+        </TonConnectUIProvider>
+      </React.Suspense>
     </NextUIProvider>
   );
 }
