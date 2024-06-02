@@ -22,7 +22,7 @@ export function Providers({ children, themeProps }: ProvidersProps) {
     <NextUIProvider navigate={router.push}>
       <React.Suspense>
         <TonConnectUIProvider
-          manifestUrl={`https://${process.env.NUXT_PUBLIC_FRONTEND_URL}/tonconnect-manifest.json`}
+          manifestUrl={`${process.env.NUXT_PUBLIC_FRONTEND_URL}/tonconnect-manifest.json`}
         >
           <WebsocketProvider value={socket}>
             <NextThemesProvider {...themeProps}>{children}</NextThemesProvider>

@@ -16,7 +16,8 @@ export default function Home() {
   const router = useRouter();
 
   const [streamURL, setStreamURL] = useState("");
-  const [walletAddress, setWalletAddress] = useState("");
+  // const [walletAddress, setWalletAddress] = useState(""); TODO: fix this
+  const [walletAddress, setWalletAddress] = useState("walletAddress");
   const [tonconnect, setTonConnect] = useTonConnectUI();
 
   useEffect(() => {
@@ -34,8 +35,9 @@ export default function Home() {
   const postData = async () => {
     try {
       const response = await axiosInstance.post(BACKEND_ROUTES.streams, {
-        streamURL,
-        user: walletAddress,
+        streamUrl: streamURL,
+        streamDuration: "10m",
+        user: "walletAddress", // TODO: fix this
       });
       return response.data;
     } catch (error) {

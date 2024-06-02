@@ -9,18 +9,15 @@ type Props = {
 
 export const LangSelector = ({ onChange, defaultValue }: Props) => {
   return (
-    <div className="flex w-full flex-wrap md:flex-nowrap gap-4">
-      <Select
-        className="max-w-xs"
-        defaultSelectedKeys={[defaultValue]}
-        label="Select Language"
-        size="sm"
-        onChange={onChange}
-      >
-        {languages.map((lang) => (
-          <SelectItem key={lang.key}>{lang.label}</SelectItem>
-        ))}
-      </Select>
-    </div>
+    <Select
+      defaultSelectedKeys={[defaultValue]}
+      label="Select Language"
+      onChange={onChange}
+      fullWidth
+    >
+      {languages.map((lang) => (
+        <SelectItem key={lang.key}>{lang.label}</SelectItem>
+      ))}
+    </Select>
   );
 };
