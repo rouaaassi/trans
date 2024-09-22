@@ -13,8 +13,8 @@ export const siteConfig = {
       href: "/streams",
     },
     {
-      label: "Pricing",
-      href: "/pricing",
+      label: "About",
+      href: "/About",
     },
   ],
   navMenuItems: [
@@ -27,8 +27,8 @@ export const siteConfig = {
       href: "/streams",
     },
     {
-      label: "Pricing",
-      href: "/pricing",
+      label: "About",
+      href: "/About",
     },
     {
       label: "Help & Feedback",
