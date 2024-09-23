@@ -6,6 +6,7 @@ export default function AboutLayout({
   return (
     <section >
       <div>
+       
       {children}
         
       </div>

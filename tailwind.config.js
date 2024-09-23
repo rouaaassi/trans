@@ -1,4 +1,5 @@
 import {nextui} from '@nextui-org/theme'
+import { title } from 'process'
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -12,6 +13,7 @@ module.exports = {
       fontFamily: {
         sans: ["var(--font-sans)"],
         mono: ["var(--font-geist-mono)"],
+        Roboto:["Roboto"],
       },
     },
   },

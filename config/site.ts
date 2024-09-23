@@ -8,13 +8,14 @@ export const siteConfig = {
       label: "Home",
       href: "/",
     },
-    {
-      label: "Streams",
-      href: "/streams",
-    },
+   
     {
       label: "About",
       href: "/About",
+    },
+    {
+      label: "Customers",
+      href: "/Customers",
     },
   ],
   navMenuItems: [
@@ -22,21 +23,22 @@ export const siteConfig = {
       label: "Home",
       href: "/",
     },
-    {
-      label: "Streams",
-      href: "/streams",
-    },
+   
     {
       label: "About",
       href: "/About",
+    },
+    {
+      label: "Customers",
+      href: "/Customers",
     },
     {
       label: "Help & Feedback",
       href: "/help-feedback",
     },
   ],
-  streams: {
-    label: "Streams",
-    href: "/streams",
+  Customers: {
+    label: "Customers",
+    href: "/Customers",
   },
 };

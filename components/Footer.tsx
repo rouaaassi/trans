@@ -53,18 +53,18 @@ export default function Footer(){
                             </div>
                             </div>
          <div className="">
-   <span className="block">
-   © 2024 Restream, Inc.
-   </span>
-    <span className="block">Restream® is a property of Restream, Inc.</span>
-    <div>
-        <div className="lg:ml-auto flex items-center justify-center lg:justify-end gap-4 lg:gap-8">
+           <span className="block">
+              © 2024 Restream, Inc.
+               </span>
+            <span className="block">Restream® is a property of Restream, Inc.</span>
+                 <div>
+              <div className="lg:ml-auto flex items-center justify-center lg:justify-end gap-4 lg:gap-8">
            
-        <a className="block opacity-75 hover:opacity-100 transition-opacity" href="/">
-        <svg xmlns="" fill="none" viewBox="0 0 36 36" className="w-6 h-6">
-       </svg>
-        <span className="sr-only">X</span></a></div>
-    </div>
+                 <a className="block opacity-75 hover:opacity-100 transition-opacity" href="/">
+                <svg xmlns="" fill="none" viewBox="0 0 36 36" className="w-6 h-6">
+                </svg>
+              <span className="sr-only">X</span></a></div>
+             </div>
           </div>
     </div>    
     );
