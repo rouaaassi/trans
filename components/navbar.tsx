@@ -49,7 +49,7 @@ export const Navbar = () => {
           ))}
         
         </ul>
-        <div className="text-bold flex space-x-8 md:p ">
+        <div className="text-bold flex space-x-8  ">
             <a href="/" title="Sing In">Sing In</a>
             <a   className={buttonStyles({
             color: "primary",
