@@ -18,7 +18,7 @@
 		"@nextui-org/select": "^2.2.1",
 		"@nextui-org/snippet": "^2.0.36",
 		"@nextui-org/switch": "^2.0.29",
-		"@nextui-org/system": "2.2.0",
+		"@nextui-org/system": "^2.4.0",
 		"@nextui-org/theme": "2.2.4",
 		"@react-aria/ssr": "^3.9.2",
 		"@react-aria/visually-hidden": "^3.8.10",
