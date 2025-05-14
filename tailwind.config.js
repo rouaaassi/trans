@@ -14,6 +14,7 @@ module.exports = {
         sans: ["var(--font-sans)"],
         mono: ["var(--font-geist-mono)"],
         Roboto:["Roboto"],
+        Archivo:["Archivo"]
       },
     },
   },

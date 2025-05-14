@@ -2,6 +2,8 @@
 
 import Hls from "hls.js";
 import { useContext, useEffect, useRef, useState } from "react";
+import { Button } from "@nextui-org/button";
+import { useSearchParams } from "next/navigation";
 
 import { LangSelector } from "./LangSelector";
 
@@ -10,8 +12,6 @@ import { BACKEND_ROUTES, languages } from "@/constants";
 import { WebsocketMessages } from "@/enums";
 import { IMessage } from "@/interfaces";
 import { axiosInstance } from "@/tools/axios";
-import { Button } from "@nextui-org/button";
-import { useSearchParams } from "next/navigation";
 
 export const VideoPlayer = () => {
   const BUFFER_TIME_SECONDS = 2;
@@ -44,11 +44,11 @@ export const VideoPlayer = () => {
       const cue = new VTTCue(
         startTime - 0.5,
         startTime + duration + 1,
-        parsed.transcript
+        parsed.transcript,
       );
 
       const foundTrack = Object.values(videoRef.current.textTracks).find(
-        (i: any) => i.language === selectedLanguage
+        (i: any) => i.language === selectedLanguage,
       ) as TextTrack;
 
       if (!foundTrack) {
@@ -95,7 +95,7 @@ export const VideoPlayer = () => {
     });
 
     const foundTrack = Object.values(
-      videoRef.current.textTracks as TextTrack[]
+      videoRef.current.textTracks as TextTrack[],
     ).find((i) => i.language === language) as TextTrack;
 
     if (!foundTrack) {
@@ -128,7 +128,7 @@ export const VideoPlayer = () => {
   const loadStreamM3U8Link = async () => {
     try {
       const response = await axiosInstance.get(
-        BACKEND_ROUTES.fetchStream(searchParams.get("hash") as string)
+        BACKEND_ROUTES.fetchStream(searchParams.get("hash") as string),
       );
 
       if (loaded) {
@@ -161,12 +161,12 @@ export const VideoPlayer = () => {
 
       {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
       <video
-        width="100%"
-        height="90%"
         ref={videoRef}
         controls
         className="min-w-96 min-h-96"
+        height="90%"
         preload="none"
+        width="100%"
       />
 
       <Button isDisabled={isPlaying} onClick={playVideo}>

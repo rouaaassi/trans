@@ -10,10 +10,10 @@ type Props = {
 export const LangSelector = ({ onChange, defaultValue }: Props) => {
   return (
     <Select
+      fullWidth
       defaultSelectedKeys={[defaultValue]}
       label="Select Language"
       onChange={onChange}
-      fullWidth
     >
       {languages.map((lang) => (
         <SelectItem key={lang.key}>{lang.label}</SelectItem>

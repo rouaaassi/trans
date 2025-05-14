@@ -88,5 +88,7 @@
         "next": ["const", "let", "var"]
       }
     ]
+   
   }
 }
+

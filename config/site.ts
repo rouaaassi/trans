@@ -1,21 +1,24 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "Next.js + NextUI",
-  description: "Make beautiful websites regardless of your design experience.",
-  navItems: [
+  name: "TransLive",
+  description: "Real-time video translation platform",
+  mainNav: [
     {
-      label: "Home",
+      title: "Home",
       href: "/",
     },
-   
     {
-      label: "About",
+      title: "About",
       href: "/About",
     },
     {
-      label: "Customers",
-      href: "/Customers",
+      title: "Pricing",
+      href: "/Pricing",
+    },
+    {
+      title: "Customers",
+      href: "/customers",
     },
   ],
   navMenuItems: [
@@ -23,22 +26,38 @@ export const siteConfig = {
       label: "Home",
       href: "/",
     },
-   
     {
       label: "About",
       href: "/About",
     },
     {
       label: "Customers",
-      href: "/Customers",
+      href: "/customers",
+    },
+    {
+      label: "Pricing",
+      href: "/Pricing",
     },
     {
       label: "Help & Feedback",
       href: "/help-feedback",
     },
+    {
+      label: "Streams",
+      href: "/streams",
+    },
   ],
-  Customers: {
+  links: {
+    twitter: "https://twitter.com/translive",
+    github: "https://github.com/translive",
+    docs: "/docs",
+  },
+  customers: {
     label: "Customers",
-    href: "/Customers",
+    href: "/customers",
+  },
+  streams: {
+    label: "Streams",
+    href: "/streams",
   },
 };

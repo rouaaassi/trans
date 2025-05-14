@@ -1,30 +1,50 @@
 import * as React from "react";
-
+import Image from "next/image";
 import { IconSvgProps } from "@/types";
+import { FC } from "react";
 
-export const Logo: React.FC<IconSvgProps> = ({
-  size = 36,
+export const Logo: FC<IconSvgProps> = ({
+  size = 120,
   width,
   height,
-  ...props
+  className,
 }) => (
-  <svg
-    fill="none"
-    height={size || height}
-    viewBox="0 0 32 32"
-    width={size || width}
-    {...props}
-  >
-    <path
-      clipRule="evenodd"
-      d="M17.6482 10.1305L15.8785 7.02583L7.02979 22.5499H10.5278L17.6482 10.1305ZM19.8798 14.0457L18.11 17.1983L19.394 19.4511H16.8453L15.1056 22.5499H24.7272L19.8798 14.0457Z"
-      fill="currentColor"
-      fillRule="evenodd"
-    />
-  </svg>
+  <div className={`flex items-center gap-2 ${className || ""}`}>
+    <svg
+      className="flex-shrink-0"
+      fill="none"
+      height={32}
+      viewBox="0 0 24 24"
+      width={32}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 2L2 7L12 12L22 7L12 2Z"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+      />
+      <path
+        d="M2 17L12 22L22 17"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+      />
+      <path
+        d="M2 12L12 17L22 12"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+      />
+    </svg>
+    <span className="text-2xl font-bold whitespace-nowrap">TransLive</span>
+  </div>
 );
 
-export const DiscordIcon: React.FC<IconSvgProps> = ({
+export const DiscordIcon: FC<IconSvgProps> = ({
   size = 24,
   width,
   height,
@@ -45,7 +65,7 @@ export const DiscordIcon: React.FC<IconSvgProps> = ({
   );
 };
 
-export const TwitterIcon: React.FC<IconSvgProps> = ({
+export const TwitterIcon: FC<IconSvgProps> = ({
   size = 24,
   width,
   height,
@@ -66,7 +86,7 @@ export const TwitterIcon: React.FC<IconSvgProps> = ({
   );
 };
 
-export const GithubIcon: React.FC<IconSvgProps> = ({
+export const GithubIcon: FC<IconSvgProps> = ({
   size = 24,
   width,
   height,
