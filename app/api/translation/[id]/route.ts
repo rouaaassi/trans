@@ -1,16 +1,16 @@
-import { NextResponse } from 'next/server';
+import { NextResponse } from "next/server";
 
 export async function GET(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: { id: string } },
 ) {
   try {
     const { id } = params;
 
     if (!id) {
       return NextResponse.json(
-        { error: 'Translation ID is required' },
-        { status: 400 }
+        { error: "Translation ID is required" },
+        { status: 400 },
       );
     }
 
@@ -21,19 +21,18 @@ export async function GET(
 
     return NextResponse.json({
       id,
-      status: 'completed',
-      videoUrl: 'https://example.com/video.mp4',
-      text: 'This is a sample translation text.',
-      originalLanguage: 'en',
-      translatedLanguage: 'es',
+      status: "completed",
+      videoUrl: "https://example.com/video.mp4",
+      text: "This is a sample translation text.",
+      originalLanguage: "en",
+      translatedLanguage: "es",
       createdAt: new Date().toISOString(),
-      completedAt: new Date().toISOString()
+      completedAt: new Date().toISOString(),
     });
   } catch (error) {
-    console.error('Error fetching translation:', error);
     return NextResponse.json(
-      { error: 'Failed to fetch translation' },
-      { status: 500 }
+      { error: "Failed to fetch translation" },
+      { status: 500 },
     );
   }
-} 
+}

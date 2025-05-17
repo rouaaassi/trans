@@ -178,10 +178,10 @@ export default function customersPage() {
                     />
                   </div>
                   <div className="pt-5">
-                    <p className="pl-5">
-                      Restream definitely simplifies our live stream process,
-                      but we value most the outreach that Restream assists
-                      with."
+                    <p className="pl-5 text-gray-600 dark:text-gray-300">
+                      &quot;TransLive has transformed how we reach our
+                      international audience. The real-time translation feature
+                      is a game-changer.&quot;
                     </p>
                   </div>
                   <div className="pt-5 mb-3">
@@ -251,13 +251,9 @@ export default function customersPage() {
                     />
                   </div>
                   <div className="absolute inset-0 z-10 pt-20">
-                    <p className="pl-20 pb-7">
-                      We wanted to distribute our live content on the platforms
-                      where fans
-                      <br /> were. For that we needed a reliable, easy to
-                      operate and cost effective
-                      <br />
-                      solution, in that case Restream.”
+                    <p className="pl-20 pb-7 text-gray-600 dark:text-gray-300">
+                      &quot;We&apos;ve seen a 40% increase in our global
+                      viewership since implementing TransLive.&quot;
                     </p>
                   </div>
                   <div className="relative mt-2 mb-16 md:pt-40 lg:pt-20 pt-44">
@@ -334,12 +330,9 @@ export default function customersPage() {
                     />
                   </div>
                   <div className="absolute inset-0 z-10 pt-20">
-                    <p className="pl-10 pb-20">
-                      We enjoyed working with Restream tos
-                      <br />
-                      show the world the 2017 Solar Eclipse. <br />
-                      It's now effortless to extend our reach
-                      <br /> by broadcasting to multiple platforms.”
+                    <p className="pl-10 pb-20 text-gray-600 dark:text-gray-300">
+                      &quot;The platform&apos;s ease of use and reliability have
+                      made it an essential tool for our content strategy.&quot;
                     </p>
                   </div>
                   <div className="relative pt-36 mb-16">
@@ -448,14 +441,14 @@ export default function customersPage() {
                     />
                   </div>
                   <div className="absolute inset-0 z-10 pt-20">
-                    <p className="pl-10 pb-20">
-                      We have been using your service
+                    <p className="pl-10 pb-20 text-gray-600 dark:text-gray-300">
+                      &quot;We have been using your service
                       <br />
                       for seven consecutive months for <br />
-                      the Mexican President's
+                      the Mexican President&apos;s
                       <br /> broadcasts, from Monday to Friday,
                       <br />
-                      without any problem.”
+                      without any problem.&quot;
                     </p>
                   </div>
                   <div className="relative pt-44 mb-16">

@@ -55,8 +55,6 @@ export const VideoPlayer = () => {
         return;
       }
 
-      console.log(videoRef.current.textTracks);
-
       foundTrack.addCue(cue);
     });
 

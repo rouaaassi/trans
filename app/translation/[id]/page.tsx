@@ -74,11 +74,11 @@ export default function TranslationPage() {
                 src={translation?.videoUrl}
               >
                 <track
-                  kind="captions"
-                  src={translation?.captionsUrl} 
-                  srcLang="en"
-                  label="English"
                   default
+                  kind="captions"
+                  label="English"
+                  src={translation?.captionsUrl}
+                  srcLang="en"
                 />
               </video>
             </div>

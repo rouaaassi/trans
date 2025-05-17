@@ -1,12 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { getAuth } from "firebase/auth";
-import { useRouter } from "next/navigation";
 import { toast } from "react-hot-toast";
 
-import { app } from "@/config/firebase";
 import axiosInstance from "@/lib/axiosInstance";
+import { BACKEND_ROUTES } from "@/constants/backendRoutes";
 
 interface LoginModalProps {
   isOpen: boolean;
@@ -18,8 +16,6 @@ export const LoginModal = ({ isOpen, onClose }: LoginModalProps) => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const router = useRouter();
-  const auth = getAuth(app);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -37,14 +33,14 @@ export const LoginModal = ({ isOpen, onClose }: LoginModalProps) => {
     }
 
     try {
-      const response = await axiosInstance.post(BACKEND_ROUTES.users, {
+      const response = await axiosInstance.post(BACKEND_ROUTES.login, {
         email,
         password,
       });
 
       if (response.data) {
         onClose();
-        toast.success("Account created successfully!");
+        toast.success("Logged in successfully!");
       }
     } catch (error: any) {
       console.error("Error creating account:", error);

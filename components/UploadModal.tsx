@@ -7,27 +7,27 @@ interface UploadModalProps {
 }
 
 const LANGUAGES = [
-  { code: 'ar', name: 'العربية' },
-  { code: 'en', name: 'English' },
-  { code: 'es', name: 'Español' },
-  { code: 'fr', name: 'Français' },
-  { code: 'de', name: 'Deutsch' },
-  { code: 'it', name: 'Italiano' },
-  { code: 'pt', name: 'Português' },
-  { code: 'ru', name: 'Русский' },
-  { code: 'zh', name: '中文' },
-  { code: 'ja', name: '日本語' },
-  { code: 'ko', name: '한국어' },
-  { code: 'hi', name: 'हिन्दी' },
-  { code: 'tr', name: 'Türkçe' },
-  { code: 'nl', name: 'Nederlands' },
-  { code: 'pl', name: 'Polski' }
+  { code: "ar", name: "العربية" },
+  { code: "en", name: "English" },
+  { code: "es", name: "Español" },
+  { code: "fr", name: "Français" },
+  { code: "de", name: "Deutsch" },
+  { code: "it", name: "Italiano" },
+  { code: "pt", name: "Português" },
+  { code: "ru", name: "Русский" },
+  { code: "zh", name: "中文" },
+  { code: "ja", name: "日本語" },
+  { code: "ko", name: "한국어" },
+  { code: "hi", name: "हिन्दी" },
+  { code: "tr", name: "Türkçe" },
+  { code: "nl", name: "Nederlands" },
+  { code: "pl", name: "Polski" },
 ];
 
 export default function UploadModal({ isOpen, onClose }: UploadModalProps) {
   const [videoUrl, setVideoUrl] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] = useState('en');
+  const [selectedLanguage, setSelectedLanguage] = useState("en");
   const router = useRouter();
 
   const handleUrlSubmit = async (e: React.FormEvent) => {
@@ -39,9 +39,9 @@ export default function UploadModal({ isOpen, onClose }: UploadModalProps) {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ 
+        body: JSON.stringify({
           videoUrl,
-          targetLanguage: selectedLanguage 
+          targetLanguage: selectedLanguage,
         }),
       });
 
@@ -110,7 +110,10 @@ export default function UploadModal({ isOpen, onClose }: UploadModalProps) {
         <div className="space-y-6">
           {/* Language Selection */}
           <div>
-            <label htmlFor="language" className="block text-sm font-medium text-gray-700 mb-2">
+            <label
+              htmlFor="language"
+              className="block text-sm font-medium text-gray-700 mb-2"
+            >
               Select Target Language
             </label>
             <select
@@ -130,8 +133,8 @@ export default function UploadModal({ isOpen, onClose }: UploadModalProps) {
           {/* URL Input */}
           <form className="space-y-4" onSubmit={handleUrlSubmit}>
             <div>
-              <label 
-                className="block text-sm font-medium text-gray-700 mb-2" 
+              <label
+                className="block text-sm font-medium text-gray-700 mb-2"
                 htmlFor="videoUrl"
               >
                 Video URL

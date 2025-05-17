@@ -9,7 +9,7 @@ import { ticketData } from "@/components/DataCard";
 
 export default function AboutPage() {
   const dataTicket = ticketData.map((item, index) => (
-    <Ticket key={index} para={item.para} title={item.title} index={index} />
+    <Ticket key={index} index={index} para={item.para} title={item.title} />
   ));
 
   return (
@@ -17,7 +17,7 @@ export default function AboutPage() {
       <section className="container lg:px-4 mx-auto px-27 max-w-1344 bg-black bg-cover w-full h-[80vh] sm:mb-4">
         <div>
           <div className="flex flex-col items-start h-full text-left pt-16">
-            <motion.h3 
+            <motion.h3
               animate={{ opacity: 1, y: 0 }}
               className="text-gray-300 mb-10 font-bold mt-2"
               initial={{ opacity: 0, y: 20 }}
@@ -25,7 +25,7 @@ export default function AboutPage() {
             >
               ABOUT US
             </motion.h3>
-            <motion.h1 
+            <motion.h1
               animate={{ opacity: 1, y: 0 }}
               className="mb-6 text-gray-100 text-6xl font-extrabold"
               initial={{ opacity: 0, y: 30 }}
@@ -71,7 +71,7 @@ export default function AboutPage() {
               <path
                 className="fill-white"
                 d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-              ></path>
+               />
             </svg>
           </div>
         </div>
@@ -128,7 +128,7 @@ export default function AboutPage() {
                 Join our team
               </h1>
               <p className="text-black font-extrabold text-xl px-20 mt-10">
-                We're looking for curious, data-driven, and result oriented
+                We&apos;re looking for curious, data-driven, and result oriented
                 <br /> teammates who want to make a lasting impact in the <br />
                 livestreaming ecosystem.
               </p>

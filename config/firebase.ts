@@ -13,11 +13,23 @@ const firebaseConfig = {
   storageBucket: "translive-caf59.firebasestorage.app",
   messagingSenderId: "426032359943",
   appId: "1:426032359943:web:c517b7396e69628f0598a2",
-  measurementId: "G-GYBEEGCXHB"
+  measurementId: "G-GYBEEGCXHB",
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+
+// Only initialize analytics in the browser
+defineAnalytics(app);
+
+function defineAnalytics(appInstance: any) {
+  if (typeof window !== "undefined") {
+    try {
+      getAnalytics(appInstance);
+    } catch (e) {
+      // ignore analytics errors in unsupported environments
+    }
+  }
+}
 
 export { app };

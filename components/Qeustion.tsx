@@ -23,8 +23,8 @@ export default function Question() {
             </h3>
           </summary>
           <p className="ml-5 mt-5 block text-sm leading-relaxed text-gray-500 ">
-            You can transcribe almost any video file using Restream's free AI
-            transcription tool.
+            You can transcribe almost any video file using Translive&apos;s free
+            AI transcription tool.
           </p>
           <ol className="ml-5 mt-4 pb-4 block text-sm leading-relaxed text-gray-500 list-decimal pl-10">
             <li className="pb-2">
@@ -37,7 +37,7 @@ export default function Question() {
               your video and start the transcription process.
             </li>
             <li className="">
-              Download your transcription file when it's done processing.
+              Download your transcription file when it&apos;s done processing.
             </li>
           </ol>
         </details>
@@ -68,8 +68,8 @@ export default function Question() {
               audio-to-text transcription tool{" "}
             </a>
             to convert your audio recordings to text. Our AI-powered tool
-            provides you with a full, accurate transcription for free. You don't
-            have to create an account or download any software.
+            provides you with a full, accurate transcription for free. You have
+            to create an account or download any software.
           </p>
           {/* <ol className="ml-5 mt-4 pb-4 block text-sm leading-relaxed text-gray-500 list-decimal pl-10">
             <li className="pb-2">Select <strong className="font-bold">Choose File </strong> to get started. Browse your device files or drag and drop your video file into the video-to-text converter.</li>
@@ -98,8 +98,8 @@ export default function Question() {
           </summary>
           <p className="ml-5 mt-5 block text-sm leading-relaxed text-gray-500">
             Yes, our video transcription tool is free, ad-free and no account is
-            required. Simply upload your video file and we’ll transcribe it in
-            no time!
+            required. Simply upload your video file and we&apos;ll transcribe it
+            in no time!
           </p>
         </details>
         <details className="px-4 pb-4 pt-4">
@@ -119,13 +119,12 @@ export default function Question() {
               />
             </svg>
             <h3 className="text-base lg:text-xl font-medium text-blue-500 px-4">
-              How accurate is TransLive's video transcription tool?
+              How accurate is TransLive&apos;s video transcription tool?
             </h3>
           </summary>
           <p className="ml-5 mt-5 block text-sm leading-relaxed text-gray-500">
-            Transcript accuracy varies by language — it’s more accurate for some
-            than others. For English, accuracy is 99%. For other languages, it’s
-            slightly lower.
+            It&apos;s more accurate for some languages than others. For English,
+            accuracy is 99%. For other languages, it&apos;s slightly lower.
           </p>
         </details>
         <details className="px-4 pb-4 pt-4">
@@ -145,16 +144,19 @@ export default function Question() {
               />
             </svg>
             <h3 className="text-base lg:text-xl font-medium text-blue-500 px-4">
-              Which file formats does Restream’s video transcription tool
+              Which file formats does Translive&apos;s video transcription tool
               support?
             </h3>
           </summary>
           <p className="ml-5 mt-5 block text-sm leading-relaxed text-gray-500">
-            Our AI video-to-text converter supports MP4, AVI, MOV, MKV, MPEG and
-            much more.
+            Restream&apos;s video transcription tool supports various formats.
           </p>
         </details>
       </div>
+      <p className="text-gray-600">Don&apos;t see your question here?</p>
+      <p className="text-gray-600">We&apos;re here to help!</p>
+      <p className="text-gray-600">Don&apos;t hesitate to reach out.</p>
+      <p className="text-gray-600">We&apos;re here to help!</p>
     </div>
   );
 }

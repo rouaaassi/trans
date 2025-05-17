@@ -21,7 +21,7 @@ export default function pricing() {
   return (
     <div>
       <section className="bg-gradient-to-r from-blue-500 via-black to-purple-800  md:h-[360vh] h-[840vh]  absolute left-0 right-0 top-0">
-      <Navbar/>
+        <Navbar />
         <div className="pt-36 flex flex-col md:justify-center md:items-center gap-5">
           <h2 className="text-gray-500 font-bold text-xl">
             <a href="/"> Get started,Today</a>

@@ -1,6 +1,95 @@
 import React from "react";
 
-export default function Card(props: { title: string | number | bigint | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<React.AwaitedReactNode> | null | undefined; price: string | number | bigint | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<React.AwaitedReactNode> | null | undefined; decription: string | number | bigint | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<React.AwaitedReactNode> | null | undefined; button: string | number | bigint | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<React.AwaitedReactNode> | null | undefined; menuTitle: string | number | bigint | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<React.AwaitedReactNode> | null | undefined; menuFirst: string | number | bigint | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<React.AwaitedReactNode> | null | undefined; menuSecond: string | number | bigint | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<React.AwaitedReactNode> | null | undefined; menuthird: string | number | bigint | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<React.AwaitedReactNode> | null | undefined; }) {
+export default function Card(props: {
+  title:
+    | string
+    | number
+    | bigint
+    | boolean
+    | React.ReactElement<any, string | React.JSXElementConstructor<any>>
+    | Iterable<React.ReactNode>
+    | React.ReactPortal
+    | Promise<React.AwaitedReactNode>
+    | null
+    | undefined;
+  price:
+    | string
+    | number
+    | bigint
+    | boolean
+    | React.ReactElement<any, string | React.JSXElementConstructor<any>>
+    | Iterable<React.ReactNode>
+    | React.ReactPortal
+    | Promise<React.AwaitedReactNode>
+    | null
+    | undefined;
+  decription:
+    | string
+    | number
+    | bigint
+    | boolean
+    | React.ReactElement<any, string | React.JSXElementConstructor<any>>
+    | Iterable<React.ReactNode>
+    | React.ReactPortal
+    | Promise<React.AwaitedReactNode>
+    | null
+    | undefined;
+  button:
+    | string
+    | number
+    | bigint
+    | boolean
+    | React.ReactElement<any, string | React.JSXElementConstructor<any>>
+    | Iterable<React.ReactNode>
+    | React.ReactPortal
+    | Promise<React.AwaitedReactNode>
+    | null
+    | undefined;
+  menuTitle:
+    | string
+    | number
+    | bigint
+    | boolean
+    | React.ReactElement<any, string | React.JSXElementConstructor<any>>
+    | Iterable<React.ReactNode>
+    | React.ReactPortal
+    | Promise<React.AwaitedReactNode>
+    | null
+    | undefined;
+  menuFirst:
+    | string
+    | number
+    | bigint
+    | boolean
+    | React.ReactElement<any, string | React.JSXElementConstructor<any>>
+    | Iterable<React.ReactNode>
+    | React.ReactPortal
+    | Promise<React.AwaitedReactNode>
+    | null
+    | undefined;
+  menuSecond:
+    | string
+    | number
+    | bigint
+    | boolean
+    | React.ReactElement<any, string | React.JSXElementConstructor<any>>
+    | Iterable<React.ReactNode>
+    | React.ReactPortal
+    | Promise<React.AwaitedReactNode>
+    | null
+    | undefined;
+  menuthird:
+    | string
+    | number
+    | bigint
+    | boolean
+    | React.ReactElement<any, string | React.JSXElementConstructor<any>>
+    | Iterable<React.ReactNode>
+    | React.ReactPortal
+    | Promise<React.AwaitedReactNode>
+    | null
+    | undefined;
+}) {
   return (
     <div className="w-full">
       <div className="px-container-x-mobile flex justify-center mx-auto w-full max-w-[1344px] lg:px-container-x-desktop pt-20">
