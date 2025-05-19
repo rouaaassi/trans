@@ -50,7 +50,7 @@ export default function TranslationPage() {
           <p className="text-gray-600">{error}</p>
           <button
             className="mt-4 bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600"
-            onClick={() => window.history.back()}
+            // onClick={() => window.history.back()}
           >
             Go Back
           </button>
