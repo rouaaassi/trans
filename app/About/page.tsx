@@ -14,7 +14,7 @@ export default function AboutPage() {
 
   return (
     <div className="w-full h-screen font-bold text-xl">
-      <section className="container lg:px-4 mx-auto px-27 max-w-1344 bg-black bg-cover w-full h-[80vh] sm:mb-4">
+      <section className="container lg:px-4 mx-auto px-28 max-w-1344 bg-black bg-cover w-full h-[80vh] sm:mb-4">
         <div>
           <div className="flex flex-col items-start h-full text-left pt-16">
             <motion.h3
